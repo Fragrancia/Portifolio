@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Questionário de História</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+    }
+    .question {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    .options {
+        display: flex;
+        flex-direction: column;
+    }
+    .option {
+        margin: 5px 0;
+    }
+</style>
+</head>
+<body>
+<div class="question">
+    Qual foi o imperador romano que ficou conhecido por sua extravagância e por incendiar Roma?
+</div>
+<div class="options">
+    <label class="option">
+        <input type="radio" name="answer" value="a"> 
+        a) Augusto
+    </label>
+    <label class="option">
+        <input type="radio" name="answer" value="b"> 
+        b) Calígula
+    </label>
+    <label class="option">
+        <input type="radio" name="answer" value="c"> 
+        c) Tibério
+    </label>
+    <label class="option">
+        <input type="radio" name="answer" value="d"> 
+        d) Nero
+    </label>
+</div>
+<button onclick="checkAnswer()">Verificar Resposta</button>
+<p id="result"></p>
+
+<script>
+    function checkAnswer() {
+        const correctAnswer = "d"; // Resposta correta é a letra "d"
+        const selectedAnswer = document.querySelector('input[name="answer"]:checked');
+
+        if (selectedAnswer) {
+            if (selectedAnswer.value === correctAnswer) {
+                document.getElementById("result").textContent = "Resposta correta!";
+            } else {
+                document.getElementById("result").textContent = "Resposta incorreta. Tente novamente.";
+            }
+        } else {
+            document.getElementById("result").textContent = "Por favor, selecione uma resposta.";
+        }
+    }
+</script>
+</body>
+</html>
